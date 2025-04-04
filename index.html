@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepfake Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎥 Deepfake Detector</h1>
+
+    <div class="upload-section">
+      <label for="videoInput" class="file-label">Choose Video File</label>
+      <input type="file" id="videoInput" accept="video/*" class="file-input">
+      <button id="analyzeButton">Analyze Video</button>
+    </div>
+
+    <!-- Status Area: Shows Loading/Error Messages -->
+    <div id="statusArea" class="status" style="display: none;">
+      <p id="statusMessage"></p>
+    </div>
+
+    <!-- Results Area: Shows the analysis results -->
+    <div id="resultsArea" class="results" style="display: none;">
+      <h2>Analysis Results</h2>
+      <p><strong>File:</strong> <span id="fileName"></span></p>
+      <p><strong>Overall Verdict:</strong> <span id="verdict" class="verdict"></span></p>
+      <hr>
+      <p><strong>Frames Analyzed:</strong> <span id="totalFrames"></span></p>
+      <p><strong>Real Frames Detected:</strong> <span id="realCount"></span></p>
+      <p><strong>Deepfake Frames Detected:</strong> <span id="deepfakeCount"></span></p>
+      <!-- Optional: Add a section for detailed frame results if needed -->
+      <!--
+      <h3>Frame Details:</h3>
+      <ul id="frameDetailsList"></ul>
+      -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
