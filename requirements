@@ -1,0 +1,10 @@
+# requirements.txt
+fastapi
+uvicorn # Often included for local dev, Vercel installs build dependencies
+torch
+torchvision
+opencv-python-headless # Use headless for server environments
+numpy
+Pillow
+python-multipart
+# Add any other libraries you used
