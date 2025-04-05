@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         datasets: [
           {
             label: 'Real Videos',
-            data: [91.2, 92.5, 93.1, 93.8, 94.5, 95.2, 96.2],
+            data: [91.2, 92.5, 93.1, 95.8, 96.5, 97.2, 99.49],
             borderColor: '#4361ee',
             backgroundColor: 'rgba(67, 97, 238, 0.1)',
             borderWidth: 2,
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
           },
           {
             label: 'Deepfakes',
-            data: [85.3, 86.7, 87.9, 88.5, 89.2, 89.8, 90.7],
+            data: [83.3, 85.7, 87.9, 88.5, 89.2, 89.8, 99.75],
             borderColor: '#f72585',
             backgroundColor: 'rgba(247, 37, 133, 0.1)',
             borderWidth: 2,
