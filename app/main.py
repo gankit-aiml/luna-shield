@@ -25,10 +25,13 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Mount static files (CSS, JS, etc.)
-app.mount("/static", StaticFiles(directory="static"), name="static")
+import os
 
-# Templates for HTML rendering
-templates = Jinja2Templates(directory="templates")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "../static")), name="static")
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "../templates"))
+
 
 # Configuration (Aligned with full_pipe.py where applicable)
 UPLOAD_DIR = "uploads"
