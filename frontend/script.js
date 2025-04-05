@@ -12,7 +12,7 @@ const deepfakeCountSpan = document.getElementById('deepfakeCount');
 // const frameDetailsList = document.getElementById('frameDetailsList'); // Uncomment if using detailed list
 
 // --- Configuration ---
-const API_ENDPOINT = "http://127.0.0.1:8000/analyze/"; // Make sure this matches your FastAPI server address
+const API_ENDPOINT = "/analyze"; // Make sure this matches your FastAPI server address
 
 // --- Event Listener ---
 analyzeButton.addEventListener('click', handleAnalysisRequest);
