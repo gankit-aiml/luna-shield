@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Analytics | Luna Shield Deepfake Detection</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+  <link rel="stylesheet" href="analytics.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <i class="fas fa-shield-alt navbar-logo"></i>
+        <span class="navbar-title">Luna Shield</span>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-video"></i> Detector</a>
+        <a href="analytics.html" class="navbar-link active"><i class="fas fa-chart-line"></i> Analytics</a>
+        <a href="about.html" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact.html" class="navbar-link"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+      <div class="navbar-mobile-menu">
+        <i class="fas fa-bars" id="mobileMenuButton"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-menu-link"><i class="fas fa-video"></i> Detector</a>
+    <a href="analytics.html" class="mobile-menu-link active"><i class="fas fa-chart-line"></i> Analytics</a>
+    <a href="about.html" class="mobile-menu-link"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html" class="mobile-menu-link"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="hero-title">Model Performance Analytics</h1>
+      <p class="hero-subtitle">Insights into our deepfake detection accuracy and capabilities</p>
+    </header>
+
+    <main class="main-content">
+      <div class="analytics-card">
+        <section class="metrics-overview">
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-value">93.4%</div>
+              <div class="metric-label">Overall Accuracy</div>
+              <div class="metric-trend up">
+                <i class="fas fa-arrow-up"></i> 2.1% from last quarter
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">96.2%</div>
+              <div class="metric-label">Real Video Detection</div>
+              <div class="metric-trend up">
+                <i class="fas fa-arrow-up"></i> 1.5% from last quarter
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">90.7%</div>
+              <div class="metric-label">Deepfake Detection</div>
+              <div class="metric-trend up">
+                <i class="fas fa-arrow-up"></i> 2.8% from last quarter
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">1.2ms</div>
+              <div class="metric-label">Avg. Processing Time</div>
+              <div class="metric-trend down">
+                <i class="fas fa-arrow-down"></i> 0.3ms faster
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="chart-section">
+          <div class="chart-container">
+            <h2><i class="fas fa-chart-bar"></i> Detection Accuracy Over Time</h2>
+            <canvas id="accuracyChart"></canvas>
+            <div class="chart-legend">
+              <div class="legend-item"><span class="legend-color real"></span> Real Videos</div>
+              <div class="legend-item"><span class="legend-color fake"></span> Deepfakes</div>
+            </div>
+          </div>
+          
+          <div class="chart-container">
+            <h2><i class="fas fa-chart-pie"></i> Current Model Performance</h2>
+            <canvas id="performanceChart"></canvas>
+          </div>
+        </section>
+
+        <section class="comparison-section">
+          <h2><i class="fas fa-balance-scale"></i> Benchmark Comparison</h2>
+          <div class="comparison-chart">
+            <canvas id="benchmarkChart"></canvas>
+          </div>
+          <div class="comparison-notes">
+            <p>Luna Shield outperforms industry benchmarks in both detection accuracy and processing speed across multiple test datasets.</p>
+          </div>
+        </section>
+
+        <section class="data-table-section">
+          <h2><i class="fas fa-table"></i> Detailed Performance Metrics</h2>
+          <div class="table-responsive">
+            <table class="metrics-table">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Videos</th>
+                  <th>Accuracy</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1 Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>DFDC (Facebook)</td>
+                  <td>5,000</td>
+                  <td>92.1%</td>
+                  <td>91.8%</td>
+                  <td>92.5%</td>
+                  <td>92.1%</td>
+                </tr>
+                <tr>
+                  <td>Celeb-DF</td>
+                  <td>1,000</td>
+                  <td>94.3%</td>
+                  <td>93.9%</td>
+                  <td>94.8%</td>
+                  <td>94.3%</td>
+                </tr>
+                <tr>
+                  <td>DeepfakeTIMIT</td>
+                  <td>800</td>
+                  <td>95.6%</td>
+                  <td>95.2%</td>
+                  <td>96.1%</td>
+                  <td>95.6%</td>
+                </tr>
+                <tr>
+                  <td>UADFV</td>
+                  <td>500</td>
+                  <td>93.8%</td>
+                  <td>93.5%</td>
+                  <td>94.2%</td>
+                  <td>93.8%</td>
+                </tr>
+                <tr>
+                  <td>Custom Dataset</td>
+                  <td>2,500</td>
+                  <td>91.5%</td>
+                  <td>91.2%</td>
+                  <td>91.9%</td>
+                  <td>91.5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="model-details">
+          <h2><i class="fas fa-microscope"></i> Model Architecture</h2>
+          <div class="architecture-grid">
+            <div class="architecture-card">
+              <h3><i class="fas fa-network-wired"></i> Neural Network</h3>
+              <ul>
+                <li>Hybrid CNN-RNN architecture</li>
+                <li>12-layer deep convolutional base</li>
+                <li>Bi-directional LSTM temporal analysis</li>
+                <li>Attention mechanisms for key frames</li>
+              </ul>
+            </div>
+            <div class="architecture-card">
+              <h3><i class="fas fa-cogs"></i> Training</h3>
+              <ul>
+                <li>15,000+ hours of video data</li>
+                <li>Balanced real/fake dataset</li>
+                <li>Transfer learning from ImageNet</li>
+                <li>Continuous online learning</li>
+              </ul>
+            </div>
+            <div class="architecture-card">
+              <h3><i class="fas fa-eye"></i> Detection Features</h3>
+              <ul>
+                <li>Facial micro-expressions</li>
+                <li>Blinking patterns</li>
+                <li>Blood flow analysis</li>
+                <li>Audio-visual synchronization</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="update-section">
+          <div class="update-card">
+            <h2><i class="fas fa-rocket"></i> Next Model Update</h2>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 75%"></div>
+              <span class="progress-text">75% complete</span>
+            </div>
+            <div class="update-features">
+              <h3>Expected Improvements:</h3>
+              <ul>
+                <li><i class="fas fa-check"></i> +3.2% accuracy on high-quality deepfakes</li>
+                <li><i class="fas fa-check"></i> 40% faster processing for 4K videos</li>
+                <li><i class="fas fa-check"></i> Better generalization to new deepfake techniques</li>
+              </ul>
+            </div>
+            <div class="expected-date">
+              <i class="fas fa-calendar-alt"></i> Expected release: Q3 2023
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>&copy; 2023 Luna Shield Technologies. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="terms.html"><i class="fas fa-file-alt"></i> Terms of Service</a>
+          <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

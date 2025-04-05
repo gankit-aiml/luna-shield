@@ -3,41 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepfake Detector</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Luna Shield | AI-Powered Deepfake Detection</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="container">
-    <h1>🎥 Deepfake Detector</h1>
-
-    <div class="upload-section">
-      <label for="videoInput" class="file-label">Choose Video File</label>
-      <input type="file" id="videoInput" accept="video/*" class="file-input">
-      <button id="analyzeButton">Analyze Video</button>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <i class="fas fa-shield-alt navbar-logo"></i>
+        <span class="navbar-title">Luna Shield</span>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-video"></i> Detector</a>
+        <a href="analytics.html" class="navbar-link"><i class="fas fa-chart-line"></i> Analytics</a>
+        <a href="about.html" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact.html" class="navbar-link"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+      <div class="navbar-mobile-menu">
+        <i class="fas fa-bars" id="mobileMenuButton"></i>
+      </div>
     </div>
+  </nav>
 
-    <!-- Status Area: Shows Loading/Error Messages -->
-    <div id="statusArea" class="status" style="display: none;">
-      <p id="statusMessage"></p>
-    </div>
-
-    <!-- Results Area: Shows the analysis results -->
-    <div id="resultsArea" class="results" style="display: none;">
-      <h2>Analysis Results</h2>
-      <p><strong>File:</strong> <span id="fileName"></span></p>
-      <p><strong>Overall Verdict:</strong> <span id="verdict" class="verdict"></span></p>
-      <hr>
-      <p><strong>Frames Analyzed:</strong> <span id="totalFrames"></span></p>
-      <p><strong>Real Frames Detected:</strong> <span id="realCount"></span></p>
-      <p><strong>Deepfake Frames Detected:</strong> <span id="deepfakeCount"></span></p>
-      <!-- Optional: Add a section for detailed frame results if needed -->
-      <!--
-      <h3>Frame Details:</h3>
-      <ul id="frameDetailsList"></ul>
-      -->
-    </div>
+  <!-- Mobile Menu (Hidden by default) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-menu-link"><i class="fas fa-video"></i> Detector</a>
+    <a href="analytics.html" class="mobile-menu-link"><i class="fas fa-chart-line"></i> Analytics</a>
+    <a href="about.html" class="mobile-menu-link"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html" class="mobile-menu-link"><i class="fas fa-envelope"></i> Contact</a>
   </div>
 
-  <script src="script.js"></script>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="hero-title">AI-Powered Deepfake Detection</h1>
+      <p class="hero-subtitle">Verify the authenticity of videos with our advanced detection technology</p>
+    </header>
+
+    <main class="main-content">
+      <div class="analysis-card">
+        <!-- Rest of the content remains the same as previous implementation -->
+        <div class="card-header">
+          <h2><i class="fas fa-video"></i> Video Analysis</h2>
+          <p>Upload a video file to check for deepfake manipulation</p>
+        </div>
+
+        <div class="upload-section">
+          <div class="file-upload-container">
+            <input type="file" id="videoInput" accept="video/*" class="file-input">
+            <label for="videoInput" class="file-label">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span class="file-label-text">Choose Video File</span>
+              <span class="file-info">MP4, MOV, AVI up to 50MB</span>
+            </label>
+          </div>
+          
+          <button id="analyzeButton" class="analyze-button">
+            <i class="fas fa-search"></i> Analyze Video
+          </button>
+        </div>
+
+        <div id="statusArea" class="status-area" style="display: none;">
+          <div class="status-content">
+            <div class="spinner" id="spinner"></div>
+            <p id="statusMessage"></p>
+          </div>
+        </div>
+
+        <div id="resultsArea" class="results-area" style="display: none;">
+          <div class="results-header">
+            <h3><i class="fas fa-chart-bar"></i> Analysis Results</h3>
+            <div class="confidence-meter">
+              <div class="meter-track">
+                <div class="meter-progress" id="confidenceMeter"></div>
+              </div>
+              <span class="confidence-value" id="confidenceValue">0%</span>
+            </div>
+          </div>
+
+          <div class="results-grid">
+            <div class="result-item">
+              <span class="result-label">File Name:</span>
+              <span id="fileName" class="result-value"></span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Verdict:</span>
+              <span id="verdict" class="verdict-badge"></span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Frames Analyzed:</span>
+              <span id="totalFrames" class="result-value"></span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Real Frames:</span>
+              <span id="realCount" class="result-value"></span>
+            </div>
+            
+            <div class="result-item">
+              <span class="result-label">Deepfake Frames:</span>
+              <span id="deepfakeCount" class="result-value"></span>
+            </div>
+          </div>
+
+          <div class="results-footer">
+            <p class="disclaimer">
+              <i class="fas fa-info-circle"></i> This analysis provides a probabilistic assessment based on current AI models. Results should be interpreted with caution and in context.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>&copy; 2023 DeepGuard Technologies. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="test_script.js"></script>
 </body>
 </html>
