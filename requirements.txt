@@ -1,8 +1,24 @@
 fastapi
-uvicorn 
-torch
-torchvision
-opencv-python-headless 
-numpy
-Pillow
-python-multipart
+uvicorn[standard]  # Includes performance extras like uvloop, httptools
+gunicorn         # Process manager for running uvicorn workers in production
+
+# --- Templating & Static Files ---
+jinja2
+
+# --- Data Handling & Forms ---
+python-multipart # Required by FastAPI for file uploads/form data
+aiofiles         # For asynchronous file operations (often used by FastAPI)
+
+# --- Machine Learning & Computer Vision ---
+torch            # PyTorch core library (Check CPU/GPU version needed!)
+torchvision      # PyTorch library for vision tasks, models, transforms (Check CPU/GPU version!)
+opencv-python-headless # OpenCV for video/image processing (server-friendly version)
+numpy            # Fundamental package for numerical computing
+Pillow           # Python Imaging Library (Fork) for image manipulation
+
+# --- Training & Evaluation Script Dependencies (full_pipe.py) ---
+scikit-learn     # For evaluation metrics (classification_report, confusion_matrix)
+matplotlib       # For plotting graphs (confusion matrix, frame predictions)
+seaborn          # For enhanced visualizations (heatmap)
+tqdm             # Progress bars for loops
+reportlab 
