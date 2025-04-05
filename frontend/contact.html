@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luna Shield | AI-Powered Deepfake Detection</title>
+  <title>Contact Us | Luna Shield Deepfake Detection</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -21,7 +21,7 @@
         <a href="index.html" class="navbar-link"><i class="fas fa-video"></i> Detector</a>
         <a href="analytics.html" class="navbar-link"><i class="fas fa-chart-line"></i> Analytics</a>
         <a href="about.html" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-        <a href="contact.html" class="navbar-link"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="contact.html" class="navbar-link active"><i class="fas fa-envelope"></i> Contact</a>
       </div>
       <div class="navbar-mobile-menu">
         <i class="fas fa-bars" id="mobileMenuButton"></i>
@@ -34,11 +34,173 @@
     <a href="index.html" class="mobile-menu-link"><i class="fas fa-video"></i> Detector</a>
     <a href="analytics.html" class="mobile-menu-link"><i class="fas fa-chart-line"></i> Analytics</a>
     <a href="about.html" class="mobile-menu-link"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact.html class="mobile-menu-link"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="contact.html" class="mobile-menu-link active"><i class="fas fa-envelope"></i> Contact</a>
   </div>
 
   <div class="app-container">
     <header class="app-header">
-      <h1 class="hero-title">Reach Out To US</h1>
-      <p class="hero-subtitle">We Are Eager To Form Your Opinion On The Good Take</p>
+      <h1 class="hero-title">Contact Our Team</h1>
+      <p class="hero-subtitle">We're here to help with any questions about our deepfake detection technology</p>
     </header>
+
+    <main class="main-content">
+      <div class="contact-card">
+        <div class="contact-container">
+          <section class="contact-info">
+            <h2><i class="fas fa-comment-dots"></i> Get In Touch</h2>
+            <p class="contact-description">
+              Have questions about our technology, interested in partnerships, or need technical support? 
+              Our team is ready to assist you with any inquiries.
+            </p>
+            
+            <div class="info-grid">
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Email Us</h3>
+                  <p>samik.workofficial@gmail.com</p>
+                  <p>t.high1945@gmail.com</p>
+                  <p>gankitsysdev@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Call Us</h3>
+                  <p>+91 9354031843</p>
+                  <p>Mon-Fri, 9am-5pm EST</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Visit Us</h3>
+                  <p>256, West-Guru Angat Nagar</p>
+                  <p>Laxmi Nagar, New Delhi-110092</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <div class="info-content">
+                  <h3>Support</h3>
+                  <p>24/7 Technical Support</p>
+                  <p>gankitsysdev@gmail.com.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <h3>Connect With Us</h3>
+              <div class="social-icons">
+                <a href="https://github.com/gankit-aiml/luna-shield" class="social-icon"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </section>
+
+          <section class="contact-form">
+            <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a topic</option>
+                  <option value="support">Technical Support</option>
+                  <option value="business">Business Inquiry</option>
+                  <option value="press">Press & Media</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              
+              <div class="form-footer">
+                <button type="submit" class="submit-button">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+        
+        <section class="faq-section">
+          <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How accurate is Luna Shield's detection?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Our current model achieves 99.75% accuracy across benchmark datasets. We continuously improve our algorithms to stay ahead of evolving deepfake techniques.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What video formats do you support?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>We support all major video formats including MP4, MOV, AVI, and MKV. Videos should be under 50MB for web analysis. For larger files, contact our enterprise team.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Do you offer API access?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Not Yet! We are admist of working to generate and provide our API access for enterprise customers. Contact our business team to discuss integration options.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How is my data handled?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>We prioritize your privacy. Uploaded videos are processed securely and deleted after analysis unless you choose to store them in your account.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>&copy; 2023 Luna Shield Technologies. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="contact.js"></script>
+</body>
+</html>
