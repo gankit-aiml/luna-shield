@@ -158,13 +158,6 @@ MIT License
 
 ---
 
-## 👨‍💻 Author
-
-**Ankit**  
-💼 AI/ML + CV Researcher | 👁️‍🗨️ Passionate about Synthetic Media Forensics  
-[GitHub](https://github.com/your-username) • [LinkedIn](https://linkedin.com/in/your-profile)
-
----
 
 ## ⭐️ If you like this project...
 
